@@ -2,7 +2,6 @@
 // @flow
 // vim: ft=javascript
 
-// $FlowIssue: The line below causes an error
 import Electrun from 'electrun';
 
 async function main() {
