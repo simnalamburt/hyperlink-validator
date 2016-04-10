@@ -1,0 +1,6 @@
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=run
+
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue

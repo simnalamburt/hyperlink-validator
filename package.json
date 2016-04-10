@@ -1,5 +1,15 @@
 {
+  "scripts": {
+    "test": "flow"
+  },
   "dependencies": {
     "electrun": "0.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-flow": "^6.5.0",
+    "babel-plugin-transform-flow-strip-types": "^6.7.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.5.0",
+    "flow-bin": "^0.22.1"
   }
 }
