@@ -18,13 +18,6 @@ async function main() {
   await w.wait(3000);
   w.goto('http://google.com/');
   await w.wait('#lst-ib');
-
-  // following code is todo
-  await w.val('#lst-ib', 'electron');
-  await w.submit('form');
-  w.once('did-finish-load', async () => {
-    await w.saveScreenshot('./electron.png');
-  });
 }
 
 main().catch(err => console.error(err && err.stack || err));
