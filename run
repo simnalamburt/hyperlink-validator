@@ -1,0 +1,30 @@
+#!/usr/bin/env babel-node
+// @flow
+// vim: ft=javascript
+
+// $FlowIssue: The line below causes an error
+import Electrun from 'electrun';
+
+async function main() {
+  let electrun = new Electrun();
+  electrun.process.stdout.pipe(process.stdout);
+  electrun.process.stderr.pipe(process.stderr);
+
+  let w = await electrun.open({ width: 1024, height: 768, show: true });
+  await w.goto('about:blank');
+  await w.devTool(true);
+  await w.eval(`process.stdout.write('hello, electrun!\\n')`);
+  await w.eval(`console.log('this will presented on devtool')`);
+  await w.wait(3000);
+  w.goto('http://google.com/');
+  await w.wait('#lst-ib');
+
+  // following code is todo
+  await w.val('#lst-ib', 'electron');
+  await w.submit('form');
+  w.once('did-finish-load', async () => {
+    await w.saveScreenshot('./electron.png');
+  });
+}
+
+main().catch(err => console.error(err && err.stack || err));
