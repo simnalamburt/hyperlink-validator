@@ -3,7 +3,7 @@
     "test": "flow"
   },
   "dependencies": {
-    "electrun": "0.0.0"
+    "electrun": "^0.0.1"
   },
   "devDependencies": {
     "babel-plugin-syntax-flow": "^6.5.0",
